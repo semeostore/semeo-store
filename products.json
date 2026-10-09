@@ -1,0 +1,30 @@
+{
+  "trending": [],
+  "collections": [],
+  "latestOffers": [
+    {
+      "id": "OFFER001",
+      "category": "Watch",
+      "name": "Casio",
+      "price": 999,
+      "offerPrice": 899,
+      "image": "latest-offer/watch.jpg"
+    },
+    {
+      "id": "OFFER002",
+      "category": "Shoes",
+      "name": "Shoes",
+      "price": 1299,
+      "offerPrice": 999,
+      "image": "latest-offer/shoes.jpg"
+    },
+    {
+      "id": "OFFER003",
+      "category": "Bag",
+      "name": "Bag",
+      "price": 1499,
+      "offerPrice": 1199,
+      "image": "latest-offer/bag.jpg"
+    }
+  ]
+}
