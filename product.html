@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Details | SEMEO STORE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#080808;background:#fff}
+a{color:inherit;text-decoration:none}
+header{height:70px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee}
+.logo{font-size:25px;font-weight:900;letter-spacing:3px}
+nav{display:flex;gap:20px;font-size:11px}
+main{padding:45px 6% 70px}
+.breadcrumb{font-size:11px;color:#777;margin-bottom:28px}
+.product{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+.photo{background:#111;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:#555;font-size:11px;letter-spacing:3px}
+.details{padding-top:10px}
+.tag{font-size:10px;color:#777;letter-spacing:2px;margin-bottom:15px}
+h1{font-size:clamp(30px,4vw,46px);letter-spacing:-1.5px;margin-bottom:15px}
+.price{font-size:20px;font-weight:bold;margin:20px 0}
+.old{font-size:15px;color:#888;text-decoration:line-through;margin-right:10px;font-weight:normal}
+.description{font-size:13px;color:#666;line-height:1.8;margin-bottom:25px}
+label{display:block;font-size:12px;font-weight:bold;margin:20px 0 10px}
+select,input,textarea{width:100%;padding:13px;border:1px solid #ddd;background:white;font-size:13px}
+button{width:100%;padding:16px;background:#080808;color:white;border:1px solid #080808;font-weight:bold;font-size:12px;letter-spacing:1px;margin-top:25px;cursor:pointer}
+button:hover{background:#333}
+.note{font-size:11px;color:#777;line-height:1.7;margin-top:15px}
+.related{margin-top:65px}
+.related h2{font-size:26px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tile{background:#111;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:#555;font-size:10px;letter-spacing:2px}
+footer{background:#080808;color:white;padding:35px 6% 20px;font-size:12px}
+footer a{color:#bbb;margin-right:18px;line-height:2.5}
+@media(max-width:650px){
+header{height:62px;padding:0 5%}.logo{font-size:21px}
+nav{gap:10px;font-size:9px}nav a:nth-child(3){display:none}
+main{padding:30px 5% 50px}
+.product{grid-template-columns:1fr;gap:25px}
+.details{padding-top:0}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="homepage/index.html">SEMEO</a>
+<nav>
+<a href="homepage/index.html">HOME</a>
+<a href="collections/index.html">COLLECTIONS</a>
+<a href="trending/index.html">TRENDING</a>
+<a href="latest-offer/index.html">OFFERS</a>
+</nav>
+</header>
+
+<main>
+<div class="breadcrumb"><a href="homepage/index.html">Home</a> / Product Details</div>
+
+<div class="product">
+<div class="photo" id="productImage">PRODUCT IMAGE</div>
+
+<div class="details">
+<p class="tag" id="productCategory">SEMEO COLLECTION</p>
+<h1 id="productName">Product Name</h1>
+<p class="tag" id="productCode">PRODUCT CODE</p>
+
+<div class="price" id="productPrice">Contact for price</div>
+<p class="description" id="productDescription">Discover this product from SEMEO STORE. Contact us for more details.</p>
+
+<form id="orderForm">
+<label for="colour">Choose Colour</label>
+<select id="colour" name="colour">
+<option value="">Select colour</option>
+<option>Black</option>
+<option>White</option>
+<option>Grey</option>
+<option>Silver</option>
+<option>Gold</option>
+<option>Off White</option>
+<option>Other / Ask on WhatsApp</option>
+</select>
+
+<div id="sizeSection">
+<label for="size">Choose Shoe Size (for shoes)</label>
+<select id="size" name="size">
+<option value="">Select size</option>
+<option>6</option><option>7</option><option>8</option>
+<option>9</option><option>10</option>
+</select>
+</div>
+
+<label for="customerName">Your Name</label>
+<input id="customerName" required placeholder="Enter full name">
+
+<label for="mobile">Mobile Number</label>
+<input id="mobile" type="tel" required placeholder="Enter mobile number">
+
+<label for="address">Full Delivery Address</label>
+<textarea id="address" rows="3" required placeholder="House name, place, district, state, PIN code"></textarea>
+
+<button type="submit">BUY NOW — ORDER ON WHATSAPP ↗</button>
+<p class="note">Clicking Buy Now opens WhatsApp with your selected product and order details. Please review and send the message to place your order.</p>
+</form>
+</div>
+</div>
+
+<section class="related">
+<h2>You May Also Like</h2>
+<div class="grid">
+<a href="collections/index.html"><div class="tile">SHOES</div></a>
+<a href="collections/index.html"><div class="tile">WATCHES</div></a>
+<a href="collections/index.html"><div class="tile">BAGS</div></a>
+<a href="collections/index.html"><div class="tile">GADGETS</div></a>
+</div>
+</section>
+</main>
+
+<footer>
+<p><strong>SEMEO STORE</strong></p>
+<p style="margin-top:12px">
+<a href="https://www.instagram.com/semeo.store?stkn=OHBiYXgwZ2RiamJ6&utm_source=qr">Instagram</a>
+<a href="https://wa.me/919074119248">WhatsApp</a>
+<a href="mailto:semeostore1@gmail.com">Email</a>
+</p>
+<p style="color:#888;margin-top:18px">© 2026 SEMEO STORE. All Rights Reserved.</p>
+</footer>
+
+<script>
+const params = new URLSearchParams(location.search);
+const productId = params.get("product");
+
+async function loadProduct(){
+  try {
+    const response = await fetch("products.json");
+    if (!response.ok) return;
+    const data = await response.json();
+    const allProducts = [
+      ...(data.trending || []),
+      ...(data.collections || []),
+      ...(data.latestOffers || [])
+    ];
+    const product = allProducts.find(item => item.id === productId);
+    if (!product) return;
+
+    document.getElementById("productName").textContent = product.name || "Product";
+    document.getElementById("productCategory").textContent = product.category || "SEMEO COLLECTION";
+    document.getElementById("productCode").textContent = "CODE: " + (product.id || "");
+    document.getElementById("productDescription").textContent = product.description || "Contact us for more product details.";
+
+    const price = document.getElementById("productPrice");
+    if (product.offerPrice !== undefined) {
+      price.innerHTML = '<span class="old">₹' + product.price + '</span> ₹' + product.offerPrice;
+    } else if (product.price !== undefined) {
+      price.textContent = "₹" + product.price;
+    }
+
+    if (product.image) {
+      const img = document.createElement("img");
+      img.src = product.image;
+      img.alt = product.name || "Product";
+      img.style.cssText = "width:100%;height:100%;object-fit:cover";
+      img.onerror = () => img.remove();
+      const holder = document.getElementById("productImage");
+      holder.textContent = "";
+      holder.appendChild(img);
+    }
+
+    if (product.category && !product.category.toLowerCase().includes("shoe")) {
+      document.getElementById("sizeSection").style.display = "none";
+    }
+  } catch (error) {
+    console.log("Using default product details.");
+  }
+}
+loadProduct();
+
+document.getElementById("orderForm").addEventListener("submit", function(event){
+  event.preventDefault();
+
+  const name = document.getElementById("productName").textContent;
+  const code = document.getElementById("productCode").textContent;
+  const colour = document.getElementById("colour").value;
+  const size = document.getElementById("size").value;
+  const customer = document.getElementById("customerName").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const price = document.getElementById("productPrice").textContent;
+
+  if (!colour) {
+    alert("Please select a colour.");
+    return;
+  }
+
+  const shoeSizeVisible = document.getElementById("sizeSection").style.display !== "none";
+  if (shoeSizeVisible && !size) {
+    alert("Please select a shoe size.");
+    return;
+  }
+
+  const message =
+    "SEMEO STORE — NEW ORDER\n\n" +
+    "Product: " + name + "\n" +
+    code + "\nPrice: " + price + "\n" +
+    "Colour: " + colour + "\n" +
+    (shoeSizeVisible ? "Shoe size: " + size + "\n" : "") +
+    "\nCUSTOMER DETAILS\nName: " + customer +
+    "\nMobile: " + mobile +
+    "\nAddress: " + address;
+
+  window.open("https://wa.me/919074119248?text=" + encodeURIComponent(message), "_blank");
+});
+</script>
+</body>
+</html>
