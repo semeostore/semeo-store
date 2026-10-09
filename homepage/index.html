@@ -8,11 +8,7 @@
   <title>SEMEO STORE | Style Your Way</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --black: #080808;
@@ -22,28 +18,16 @@
       --white: #ffffff;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--white);
       color: var(--black);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input {
-      font: inherit;
-    }
-
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
     .announcement {
       background: var(--black);
@@ -56,13 +40,13 @@
     }
 
     .header {
-      height: 76px;
-      padding: 0 5%;
+      min-height: 76px;
+      padding: 15px 5%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid #eee;
       background: white;
       position: sticky;
       top: 0;
@@ -79,28 +63,25 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 25px;
     }
 
     .nav a {
-      font-size: 12px;
-      font-weight: 600;
-      transition: opacity .2s;
+      font-size: 11px;
+      font-weight: 700;
     }
 
-    .nav a:hover {
-      opacity: .55;
-    }
+    .nav a:hover { opacity: .55; }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
 
     .search {
-      width: 165px;
-      padding: 10px 12px;
+      width: 155px;
+      padding: 10px 13px;
       border: 1px solid #e4e4e4;
       border-radius: 30px;
       outline: none;
@@ -109,21 +90,19 @@
     }
 
     .menu-button {
+      display: none;
       border: 0;
       background: transparent;
-      font-size: 23px;
+      font-size: 24px;
       cursor: pointer;
-      display: none;
     }
 
-    .hero {
-      padding: 18px 4% 0;
-    }
+    .hero { padding: 18px 4% 0; }
 
     .hero-main {
       background: #080808;
       color: white;
-      min-height: 480px;
+      min-height: 470px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -137,14 +116,10 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse at center, #242424 0%, #101010 45%, #050505 100%);
+      background: radial-gradient(ellipse at center, #242424, #101010 48%, #050505);
     }
 
-    .hero-content {
-      position: relative;
-      max-width: 750px;
-    }
+    .hero-content { position: relative; max-width: 750px; }
 
     .eyebrow {
       font-size: 10px;
@@ -154,7 +129,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(43px, 8vw, 88px);
+      font-size: clamp(45px, 8vw, 88px);
       line-height: .98;
       letter-spacing: -4px;
       font-weight: 900;
@@ -184,10 +159,7 @@
       transition: .2s;
     }
 
-    .button:hover {
-      background: transparent;
-      color: white;
-    }
+    .button:hover { background: transparent; color: white; }
 
     .hero-categories {
       display: grid;
@@ -197,8 +169,8 @@
     }
 
     .hero-tile {
-      min-height: 230px;
-      background: #0b0b0b;
+      min-height: 225px;
+      background: #080808;
       color: white;
       padding: 28px;
       display: flex;
@@ -209,21 +181,19 @@
       overflow: hidden;
     }
 
-    .hero-tile::before {
+    .hero-tile::before,
+    .collection-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 75% 25%, #252525, #080808 70%);
-      transition: transform .5s;
+      background: radial-gradient(ellipse at 75% 25%, #292929, #080808 70%);
+      transition: transform .4s;
     }
 
-    .hero-tile:hover::before {
-      transform: scale(1.05);
-    }
+    .hero-tile:hover::before,
+    .collection-card:hover::before { transform: scale(1.05); }
 
-    .hero-tile > * {
-      position: relative;
-    }
+    .hero-tile > *, .collection-card > * { position: relative; }
 
     .hero-tile span {
       font-size: 10px;
@@ -246,9 +216,7 @@
       padding-bottom: 5px;
     }
 
-    .section {
-      padding: 85px 5%;
-    }
+    .section { padding: 78px 5%; }
 
     .section-heading {
       display: flex;
@@ -284,10 +252,7 @@
       gap: 15px;
     }
 
-    .product-card {
-      min-width: 0;
-      display: block;
-    }
+    .product-card { min-width: 0; display: block; }
 
     .product-image {
       background: #080808;
@@ -300,19 +265,16 @@
       position: relative;
     }
 
-    .product-image span {
+    .product-image span,
+    .offer-image > span {
       font-size: 9px;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    .product-card:hover .product-image {
-      background: #171717;
-    }
+    .product-card:hover .product-image { background: #191919; }
 
-    .product-info {
-      padding: 13px 1px;
-    }
+    .product-info { padding: 13px 1px; }
 
     .product-category {
       color: #777;
@@ -328,18 +290,9 @@
       margin-bottom: 7px;
     }
 
-    .product-price {
-      font-size: 12px;
-    }
+    .product-price { font-size: 12px; }
 
-    .product-price del {
-      color: #888;
-      margin-right: 6px;
-    }
-
-    .offer-section {
-      background: #f5f5f2;
-    }
+    .offer-section { background: #f5f5f2; }
 
     .offer-grid {
       display: grid;
@@ -350,6 +303,7 @@
     .offer-card {
       background: white;
       display: block;
+      min-width: 0;
       padding-bottom: 20px;
     }
 
@@ -360,15 +314,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 9px;
-      letter-spacing: 3px;
       position: relative;
+      overflow: hidden;
+    }
+
+    .offer-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .offer-label {
       position: absolute;
       left: 12px;
       top: 12px;
+      z-index: 2;
       background: white;
       color: black;
       padding: 8px 10px;
@@ -377,14 +339,8 @@
       letter-spacing: 1px;
     }
 
-    .offer-info {
-      padding: 19px 18px 0;
-    }
-
-    .offer-info h3 {
-      font-size: 17px;
-      margin-bottom: 9px;
-    }
+    .offer-info { padding: 19px 18px 0; }
+    .offer-info h3 { font-size: 17px; margin-bottom: 9px; }
 
     .offer-info p {
       color: #777;
@@ -392,16 +348,8 @@
       margin-bottom: 12px;
     }
 
-    .offer-price {
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .offer-price del {
-      color: #888;
-      font-weight: normal;
-      margin-right: 7px;
-    }
+    .offer-price { font-size: 13px; font-weight: bold; }
+    .offer-price del { color: #888; font-weight: normal; margin-right: 7px; }
 
     .offer-link {
       display: inline-block;
@@ -422,29 +370,13 @@
     .collection-card {
       background: #080808;
       color: white;
-      min-height: 190px;
+      min-height: 180px;
       padding: 25px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       position: relative;
       overflow: hidden;
-    }
-
-    .collection-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 80% 15%, #292929, #080808 68%);
-      transition: transform .4s;
-    }
-
-    .collection-card:hover::before {
-      transform: scale(1.06);
-    }
-
-    .collection-card > * {
-      position: relative;
     }
 
     .collection-card span {
@@ -460,10 +392,7 @@
       margin-bottom: 12px;
     }
 
-    .collection-card b {
-      font-size: 9px;
-      letter-spacing: 1px;
-    }
+    .collection-card b { font-size: 9px; letter-spacing: 1px; }
 
     .brand-section {
       background: #080808;
@@ -472,9 +401,7 @@
       padding: 75px 20px;
     }
 
-    .brand-section .eyebrow {
-      color: #999;
-    }
+    .brand-section .eyebrow { color: #999; }
 
     .brand-section h2 {
       font-size: clamp(31px, 5vw, 52px);
@@ -490,16 +417,7 @@
       line-height: 1.9;
     }
 
-    .brand-section .button {
-      background: white;
-      color: black;
-    }
-
-    .footer {
-      background: #111;
-      color: white;
-      padding: 55px 5% 0;
-    }
+    .footer { background: #111; color: white; padding: 55px 5% 0; }
 
     .footer-main {
       display: grid;
@@ -529,11 +447,7 @@
       margin-bottom: 20px;
     }
 
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-    }
+    .footer-links { display: flex; flex-direction: column; gap: 13px; }
 
     .footer-links a {
       color: #aaa;
@@ -542,9 +456,7 @@
       overflow-wrap: anywhere;
     }
 
-    .footer-links a:hover {
-      color: white;
-    }
+    .footer-links a:hover { color: white; }
 
     .footer-bottom {
       border-top: 1px solid #303030;
@@ -574,52 +486,22 @@
     }
 
     @media (max-width: 900px) {
-      .nav {
-        gap: 15px;
-      }
-
-      .search {
-        width: 125px;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .product-card:nth-child(n+4) {
-        display: none;
-      }
-
-      .footer-main {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .nav { gap: 15px; }
+      .search { width: 125px; }
+      .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 600px) {
-      .announcement {
-        font-size: 9px;
-        padding: 10px 6px;
-      }
-
-      .header {
-        height: 64px;
-        padding: 0 4%;
-        gap: 10px;
-      }
-
-      .logo {
-        font-size: 22px;
-        letter-spacing: 3px;
-      }
-
-      .menu-button {
-        display: block;
-      }
+      .announcement { font-size: 9px; padding: 10px 6px; }
+      .header { min-height: 64px; padding: 12px 4%; gap: 10px; }
+      .logo { font-size: 22px; letter-spacing: 3px; }
+      .menu-button { display: block; }
 
       .nav {
         display: none;
         position: absolute;
-        top: 64px;
+        top: 100%;
         left: 0;
         right: 0;
         padding: 22px 5%;
@@ -630,118 +512,29 @@
         gap: 22px;
       }
 
-      .nav.open {
-        display: flex;
-      }
-
-      .header-actions {
-        gap: 8px;
-      }
-
-      .search {
-        width: 95px;
-        padding: 9px;
-        font-size: 10px;
-      }
-
-      .hero {
-        padding: 10px 3% 0;
-      }
-
-      .hero-main {
-        min-height: 400px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .hero-categories {
-        gap: 8px;
-      }
-
-      .hero-tile {
-        min-height: 165px;
-        padding: 16px;
-      }
-
-      .hero-tile h2 {
-        font-size: 20px;
-      }
-
-      .section {
-        padding: 58px 4%;
-      }
-
-      .section-heading {
-        margin-bottom: 20px;
-      }
-
-      .section-heading h2 {
-        font-size: 27px;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .product-card:nth-child(n+4) {
-        display: block;
-      }
-
-      .product-card:nth-child(n+5) {
-        display: none;
-      }
-
-      .offer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .offer-card:last-child {
-        display: none;
-      }
-
-      .offer-info {
-        padding: 13px 10px 0;
-      }
-
-      .offer-info h3 {
-        font-size: 14px;
-      }
-
-      .collections {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .collection-card {
-        min-height: 145px;
-        padding: 16px;
-      }
-
-      .collection-card h3 {
-        font-size: 16px;
-      }
-
-      .footer {
-        padding: 40px 5% 0;
-      }
-
-      .footer-main {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 32px 20px;
-      }
-
-      .footer-bottom {
-        line-height: 1.7;
-      }
-
-      .whatsapp-float {
-        right: 12px;
-        bottom: 12px;
-      }
+      .nav.open { display: flex; }
+      .header-actions { gap: 8px; }
+      .search { width: 100px; padding: 9px; font-size: 10px; }
+      .hero { padding: 10px 3% 0; }
+      .hero-main { min-height: 390px; }
+      .hero h1 { letter-spacing: -2px; }
+      .hero-categories { gap: 8px; }
+      .hero-tile { min-height: 165px; padding: 16px; }
+      .hero-tile h2 { font-size: 20px; }
+      .section { padding: 55px 4%; }
+      .section-heading { margin-bottom: 20px; }
+      .section-heading h2 { font-size: 25px; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .offer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .offer-info { padding: 13px 10px 0; }
+      .offer-info h3 { font-size: 14px; }
+      .collections { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .collection-card { min-height: 145px; padding: 16px; }
+      .collection-card h3 { font-size: 16px; }
+      .footer { padding: 40px 5% 0; }
+      .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+      .footer-bottom { line-height: 1.7; }
+      .whatsapp-float { right: 12px; bottom: 12px; }
     }
   </style>
 </head>
@@ -752,19 +545,19 @@
   </div>
 
   <header class="header">
-    <a href="index.html" class="logo">SEMEO</a>
+    <a href="../index.html" class="logo">SEMEO</a>
 
     <nav class="nav" id="mainNav">
-      <a href="index.html">HOME</a>
-      <a href="shop.html">SHOP</a>
+      <a href="#top">HOME</a>
+      <a href="#trending">TRENDING</a>
       <a href="#collections">COLLECTIONS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
+      <a href="#latest-offers">OFFERS</a>
+      <a href="#footer">CONTACT</a>
     </nav>
 
     <div class="header-actions">
-      <form id="searchForm" action="shop.html">
-        <input class="search" type="search" name="q"
+      <form id="searchForm">
+        <input class="search" id="searchInput" type="search"
           placeholder="Search products..." aria-label="Search products">
       </form>
       <button class="menu-button" id="menuButton"
@@ -772,7 +565,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
       <div class="hero-main">
         <div class="hero-content">
@@ -780,21 +573,21 @@
           <h1>Style Your<br>Way.</h1>
           <p>Discover everyday essentials, statement accessories<br>
             and styles made for you.</p>
-          <a href="shop.html" class="button">SHOP NOW &nbsp; ↗</a>
+          <a href="#collections" class="button">EXPLORE COLLECTIONS ↗</a>
         </div>
       </div>
 
       <div class="hero-categories">
-        <a href="collection.html?category=mens" class="hero-tile">
+        <a href="#collections" class="hero-tile">
           <span>EXPLORE THE COLLECTION</span>
           <h2>Men's Style</h2>
-          <div class="tile-link">SHOP MEN &nbsp; ↗</div>
+          <div class="tile-link">EXPLORE MEN ↗</div>
         </a>
 
-        <a href="collection.html?category=ladies" class="hero-tile">
+        <a href="#collections" class="hero-tile">
           <span>FIND YOUR LOOK</span>
           <h2>Ladies' Style</h2>
-          <div class="tile-link">SHOP LADIES &nbsp; ↗</div>
+          <div class="tile-link">EXPLORE LADIES ↗</div>
         </a>
       </div>
     </section>
@@ -805,55 +598,52 @@
           <div class="eyebrow">Popular right now</div>
           <h2>Trending Products</h2>
         </div>
-        <a class="view-all" href="shop.html">VIEW ALL ↗</a>
+        <a class="view-all" href="#collections">EXPLORE ALL ↗</a>
       </div>
 
-      <div class="product-grid">
-        <a href="product.html?product=TREND001" class="product-card">
+      <div class="product-grid" id="trendingGrid">
+        <a href="#collections" class="product-card">
           <div class="product-image"><span>Product 01</span></div>
           <div class="product-info">
             <div class="product-category">Watches</div>
             <div class="product-name">Watch Collection</div>
-            <div class="product-price">Explore product</div>
+            <div class="product-price">Discover the collection</div>
           </div>
         </a>
-
-        <a href="product.html?product=TREND002" class="product-card">
+        <a href="#collections" class="product-card">
           <div class="product-image"><span>Product 02</span></div>
           <div class="product-info">
             <div class="product-category">Shoes</div>
             <div class="product-name">Shoes Collection</div>
-            <div class="product-price">Explore product</div>
+            <div class="product-price">Discover the collection</div>
           </div>
         </a>
-
-        <a href="product.html?product=TREND003" class="product-card">
+        <a href="#collections" class="product-card">
           <div class="product-image"><span>Product 03</span></div>
           <div class="product-info">
             <div class="product-category">Bags</div>
             <div class="product-name">Bags Collection</div>
-            <div class="product-price">Explore product</div>
+            <div class="product-price">Discover the collection</div>
           </div>
         </a>
-
-        <a href="product.html?product=TREND004" class="product-card">
+        <a href="#collections" class="product-card">
           <div class="product-image"><span>Product 04</span></div>
           <div class="product-info">
             <div class="product-category">Gadgets</div>
             <div class="product-name">Gadgets Collection</div>
-            <div class="product-price">Explore product</div>
+            <div class="product-price">Discover the collection</div>
           </div>
         </a>
-
-        <a href="product.html?product=TREND005" class="product-card">
+        <a href="#collections" class="product-card">
           <div class="product-image"><span>Product 05</span></div>
           <div class="product-info">
             <div class="product-category">Accessories</div>
             <div class="product-name">Everyday Essentials</div>
-            <div class="product-price">Explore product</div>
+            <div class="product-price">Discover the collection</div>
           </div>
         </a>
       </div>
+      <p id="searchMessage" style="display:none;margin-top:20px;font-size:12px;color:#777;"></p>
     </section>
 
     <section class="section" id="collections">
@@ -862,36 +652,35 @@
           <div class="eyebrow">Find your favourites</div>
           <h2>Shop By Collection</h2>
         </div>
-        <a class="view-all" href="shop.html">ALL PRODUCTS ↗</a>
       </div>
 
       <div class="collections">
-        <a href="collection.html?category=ladies-shoes" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>01 / LADIES</span><h3>Ladies' Shoes</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="collection.html?category=ladies-watches" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>02 / LADIES</span><h3>Ladies' Watches</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="collection.html?category=ladies-bags" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>03 / LADIES</span><h3>Ladies' Bags</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="collection.html?category=mens-shoes" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>04 / MEN</span><h3>Men's Shoes</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="collection.html?category=mens-watches" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>05 / MEN</span><h3>Men's Watches</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="collection.html?category=mens-bags" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>06 / LIFESTYLE</span><h3>Bags & Travel</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="collection.html?category=gadgets" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>07 / TECH</span><h3>Gadgets</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="collection.html?category=accessories" class="collection-card">
+        <a href="#trending" class="collection-card">
           <span>08 / EVERYDAY</span><h3>Accessories</h3><b>EXPLORE ↗</b>
         </a>
-        <a href="shop.html" class="collection-card">
-          <span>09 / SEMEO</span><h3>Explore Everything</h3><b>SHOP ALL ↗</b>
+        <a href="#trending" class="collection-card">
+          <span>09 / SEMEO</span><h3>Explore Everything</h3><b>EXPLORE ↗</b>
         </a>
       </div>
     </section>
@@ -902,49 +691,24 @@
           <div class="eyebrow">Limited-time deals</div>
           <h2>Don't Miss This Offer</h2>
         </div>
-        <a class="view-all" href="shop.html?filter=offers">ALL OFFERS ↗</a>
+        <span class="view-all">LATEST DEALS</span>
       </div>
 
-      <div class="offer-grid">
-        <a href="product.html?product=OFFER001" class="offer-card">
-          <div class="offer-image">
-            <span>OFFER WATCH</span>
-            <div class="offer-label">SPECIAL OFFER</div>
-          </div>
-          <div class="offer-info">
-            <h3>Watch Offer</h3>
-            <p>Watch collection · Limited offer</p>
-            <div class="offer-price">Offer details coming soon</div>
-            <div class="offer-link">VIEW PRODUCT ↗</div>
-          </div>
-        </a>
-
-        <a href="product.html?product=OFFER002" class="offer-card">
-          <div class="offer-image">
-            <span>OFFER SHOES</span>
-            <div class="offer-label">SPECIAL OFFER</div>
-          </div>
-          <div class="offer-info">
-            <h3>Shoes Offer</h3>
-            <p>Shoes collection · Limited offer</p>
-            <div class="offer-price">Offer details coming soon</div>
-            <div class="offer-link">VIEW PRODUCT ↗</div>
-          </div>
-        </a>
-
-        <a href="product.html?product=OFFER003" class="offer-card">
-          <div class="offer-image">
-            <span>OFFER BAG</span>
-            <div class="offer-label">SPECIAL OFFER</div>
-          </div>
-          <div class="offer-info">
-            <h3>Bag Offer</h3>
-            <p>Bags collection · Limited offer</p>
-            <div class="offer-price">Offer details coming soon</div>
-            <div class="offer-link">VIEW PRODUCT ↗</div>
-          </div>
-        </a>
+      <div class="offer-grid" id="offerGrid">
+        <div class="offer-card">
+          <div class="offer-image"><span>WATCH OFFER</span><div class="offer-label">SPECIAL OFFER</div></div>
+          <div class="offer-info"><h3>Loading offer...</h3><p>Latest offer</p><div class="offer-price">Please wait</div></div>
+        </div>
+        <div class="offer-card">
+          <div class="offer-image"><span>SHOES OFFER</span><div class="offer-label">SPECIAL OFFER</div></div>
+          <div class="offer-info"><h3>Loading offer...</h3><p>Latest offer</p><div class="offer-price">Please wait</div></div>
+        </div>
+        <div class="offer-card">
+          <div class="offer-image"><span>BAG OFFER</span><div class="offer-label">SPECIAL OFFER</div></div>
+          <div class="offer-info"><h3>Loading offer...</h3><p>Latest offer</p><div class="offer-price">Please wait</div></div>
+        </div>
       </div>
+      <p id="offerStatus" style="font-size:11px;color:#777;margin-top:15px;"></p>
     </section>
 
     <section class="brand-section">
@@ -954,11 +718,11 @@
         A lifestyle destination for shoes, watches, bags, gadgets
         and everyday essentials. Discover your style with SEMEO STORE.
       </p>
-      <a href="about.html" class="button">ABOUT SEMEO &nbsp; ↗</a>
+      <a href="#footer" class="button">CONTACT SEMEO ↗</a>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="footer-main">
       <div>
         <div class="footer-brand">SEMEO</div>
@@ -971,22 +735,22 @@
       <div>
         <h3>Quick Links</h3>
         <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About SEMEO</a>
-          <a href="shop.html">Shop All</a>
-          <a href="contact.html">Contact Us</a>
+          <a href="#top">Home</a>
+          <a href="#top">About SEMEO</a>
+          <a href="#collections">Shop Collections</a>
+          <a href="mailto:semeostore1@gmail.com">Contact Us</a>
         </div>
       </div>
 
       <div>
         <h3>Customer Support</h3>
         <div class="footer-links">
-          <a href="support.html#shipping">Shipping & Delivery</a>
-          <a href="support.html#returns">Return & Replacement</a>
-          <a href="support.html#refunds">Refund Policy</a>
-          <a href="support.html#privacy">Privacy Policy</a>
-          <a href="support.html#terms">Terms & Conditions</a>
-          <a href="support.html#faq">FAQ</a>
+          <a href="mailto:semeostore1@gmail.com?subject=Shipping%20and%20Delivery">Shipping & Delivery</a>
+          <a href="mailto:semeostore1@gmail.com?subject=Return%20and%20Replacement">Return & Replacement</a>
+          <a href="mailto:semeostore1@gmail.com?subject=Refund%20Policy">Refund Policy</a>
+          <a href="mailto:semeostore1@gmail.com?subject=Privacy%20Policy">Privacy Policy</a>
+          <a href="mailto:semeostore1@gmail.com?subject=Terms%20and%20Conditions">Terms & Conditions</a>
+          <a href="mailto:semeostore1@gmail.com?subject=FAQ">FAQ</a>
         </div>
       </div>
 
@@ -997,8 +761,8 @@
              target="_blank" rel="noopener noreferrer">Instagram ↗</a>
           <a href="https://wa.me/919074119248"
              target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-          <a href="mailto:semeostore1@gmail.com">Email Us</a>
-          <a href="contact.html">Contact Details</a>
+          <a href="mailto:semeostore1@gmail.com">semeostore1@gmail.com</a>
+          <a href="https://wa.me/919074119248">+91 9074119248</a>
         </div>
       </div>
     </div>
@@ -1014,6 +778,7 @@
      target="_blank" rel="noopener noreferrer">WHATSAPP ↗</a>
 
   <script>
+    // Mobile navigation
     const menuButton = document.getElementById("menuButton");
     const mainNav = document.getElementById("mainNav");
 
@@ -1029,6 +794,128 @@
         menuButton.setAttribute("aria-expanded", "false");
         menuButton.textContent = "☰";
       });
+    });
+
+    // Load latest offer products from the root products.json file.
+    async function loadLatestOffers() {
+      const grid = document.getElementById("offerGrid");
+      const status = document.getElementById("offerStatus");
+
+      try {
+        const response = await fetch("../products.json");
+
+        if (!response.ok) {
+          throw new Error("Could not load products.json");
+        }
+
+        const data = await response.json();
+        const offers = Array.isArray(data.latestOffers) ? data.latestOffers : [];
+
+        if (!offers.length) {
+          status.textContent = "No offers available right now.";
+          grid.innerHTML = "";
+          return;
+        }
+
+        grid.innerHTML = "";
+
+        offers.forEach(function (product) {
+          const card = document.createElement("a");
+          card.className = "offer-card";
+          card.href = "https://wa.me/919074119248?text=" +
+            encodeURIComponent(
+              "Hello SEMEO STORE, I am interested in " +
+              product.name + " (" + product.id + "). Please share details."
+            );
+
+          const imageBox = document.createElement("div");
+          imageBox.className = "offer-image";
+
+          const image = document.createElement("img");
+          image.src = "../" + product.image;
+          image.alt = product.name;
+          image.loading = "lazy";
+          image.onerror = function () {
+            image.remove();
+          };
+
+          const imageLabel = document.createElement("span");
+          imageLabel.textContent = product.category || "SEMEO OFFER";
+
+          const badge = document.createElement("div");
+          badge.className = "offer-label";
+          badge.textContent = "SPECIAL OFFER";
+
+          imageBox.append(image, imageLabel, badge);
+
+          const info = document.createElement("div");
+          info.className = "offer-info";
+
+          const title = document.createElement("h3");
+          title.textContent = product.name || "Product";
+
+          const description = document.createElement("p");
+          description.textContent = (product.category || "Product") +
+            " · Limited offer";
+
+          const price = document.createElement("div");
+          price.className = "offer-price";
+
+          if (product.price !== undefined && product.offerPrice !== undefined) {
+            const oldPrice = document.createElement("del");
+            oldPrice.textContent = "₹" + product.price;
+            price.append(oldPrice, document.createTextNode(" ₹" + product.offerPrice));
+          } else if (product.price !== undefined) {
+            price.textContent = "₹" + product.price;
+          } else {
+            price.textContent = "Contact for price";
+          }
+
+          const linkText = document.createElement("span");
+          linkText.className = "offer-link";
+          linkText.textContent = "ENQUIRE ON WHATSAPP ↗";
+
+          info.append(title, description, price, linkText);
+          card.append(imageBox, info);
+          grid.appendChild(card);
+        });
+
+        status.textContent = "";
+      } catch (error) {
+        console.error(error);
+        status.textContent =
+          "Offers could not load. Please check products.json and try again.";
+      }
+    }
+
+    loadLatestOffers();
+
+    // Simple search for the currently displayed trending products and collections.
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+    const searchMessage = document.getElementById("searchMessage");
+
+    searchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const query = searchInput.value.trim().toLowerCase();
+      const cards = document.querySelectorAll(
+        "#trendingGrid .product-card, #collections .collection-card"
+      );
+      let found = 0;
+
+      cards.forEach(function (card) {
+        const matches = !query || card.textContent.toLowerCase().includes(query);
+        card.style.display = matches ? "" : "none";
+        if (matches) found++;
+      });
+
+      searchMessage.style.display = "block";
+      searchMessage.textContent = found
+        ? found + " matching item(s) shown."
+        : "No matching items in these sections. Try watches, shoes, bags or gadgets.";
+
+      document.getElementById("trending").scrollIntoView({ behavior: "smooth" });
     });
   </script>
 </body>
