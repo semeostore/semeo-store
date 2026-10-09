@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Products | SEMEO STORE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:#111;font-family:Arial,sans-serif}
+header{background:#000;color:#fff;padding:20px}
+header a{color:#fff;text-decoration:none}
+.logo{font-size:25px;font-weight:900;letter-spacing:3px}
+nav{margin-top:15px;display:flex;gap:20px;flex-wrap:wrap}
+main{padding:25px 5%}
+h1{font-size:30px;margin-bottom:10px}
+.subtitle{color:#777;margin-bottom:25px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+select,input{padding:12px;border:1px solid #ddd;border-radius:5px;background:#fff;font-size:14px}
+#products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.card{color:#111;text-decoration:none;min-width:0}
+.photo{width:100%;aspect-ratio:3/4;background:#080808;display:flex;align-items:center;justify-content:center;color:#555;font-size:12px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.info{padding:12px 0}
+.category{font-size:11px;color:#777;text-transform:uppercase}
+.name{font-weight:bold;margin:7px 0}
+.price{font-weight:bold}
+.empty{padding:25px 0;color:#777;grid-column:1/-1}
+footer{background:#000;color:#fff;text-align:center;padding:25px;margin-top:40px}
+footer a{color:#fff}
+@media(max-width:700px){
+#products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+main{padding:22px 4%}
+h1{font-size:25px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<a href="homepage/index.html" class="logo">SEMEO STORE</a>
+<nav>
+<a href="homepage/index.html">Home</a>
+<a href="trending/index.html">Trending</a>
+<a href="collections/index.html">Collections</a>
+<a href="latest-offer/index.html">Latest Offers</a>
+</nav>
+</header>
+
+<main>
+<h1>SHOP ALL PRODUCTS</h1>
+<p class="subtitle">Discover your style with SEMEO STORE.</p>
+
+<div class="filters">
+<input id="search" type="search" placeholder="Search products..." style="flex:1;min-width:150px">
+<select id="category">
+<option value="">All Categories</option>
+<option value="shoes">Shoes</option>
+<option value="watches">Watches</option>
+<option value="bags">Bags</option>
+<option value="headphones">Headphones</option>
+<option value="accessories">Accessories</option>
+</select>
+<select id="sort">
+<option value="default">Sort By</option>
+<option value="low">Price: Low to High</option>
+<option value="high">Price: High to Low</option>
+</select>
+</div>
+
+<div id="products">
+<p class="empty">Loading products...</p>
+</div>
+</main>
+
+<footer>
+<strong>SEMEO STORE</strong>
+<p style="margin:10px 0">Questions? Contact us</p>
+<p><a href="https://wa.me/919074119248">WhatsApp</a> ·
+<a href="https://www.instagram.com/semeo.store/">Instagram</a> ·
+<a href="mailto:semeostore1@gmail.com">Email</a></p>
+<p style="margin-top:15px">© 2026 SEMEO STORE. All Rights Reserved.</p>
+</footer>
+
+<script>
+let allProducts=[];
+
+async function loadProducts(){
+  const container=document.getElementById("products");
+
+  try{
+    const response=await fetch("products.json");
+    if(!response.ok) throw new Error("Products file not found");
+
+    const data=await response.json();
+
+    allProducts=[
+      ...(data.trending||[]),
+      ...(data.collections||[]),
+      ...(data.latestOffers||[])
+    ];
+
+    const unique=new Map();
+    allProducts.forEach((p,i)=>{
+      if(!p.id) p.id="PRODUCT"+i;
+      if(!unique.has(p.id)) unique.set(p.id,p);
+    });
+    allProducts=[...unique.values()];
+
+    renderProducts();
+  }catch(error){
+    container.innerHTML='<p class="empty">Products could not be loaded. Please try again later.</p>';
+  }
+}
+
+function renderProducts(){
+  const container=document.getElementById("products");
+  const search=document.getElementById("search").value.toLowerCase().trim();
+  const category=document.getElementById("category").value.toLowerCase();
+  const sort=document.getElementById("sort").value;
+
+  let filtered=allProducts.filter(p=>{
+    const name=(p.name||p.title||"").toLowerCase();
+    const cat=(p.category||"").toLowerCase();
+    const matchesSearch=name.includes(search)||cat.includes(search);
+    const matchesCategory=!category||
+      cat.includes(category)||
+      (category==="watches"&&cat.includes("watch"))||
+      (category==="bags"&&cat.includes("bag"))||
+      (category==="shoes"&&cat.includes("shoe"));
+    return matchesSearch&&matchesCategory;
+  });
+
+  if(sort==="low") filtered.sort((a,b)=>Number(a.offerPrice||a.price||0)-Number(b.offerPrice||b.price||0));
+  if(sort==="high") filtered.sort((a,b)=>Number(b.offerPrice||b.price||0)-Number(a.offerPrice||a.price||0));
+
+  if(!filtered.length){
+    container.innerHTML='<p class="empty">No products available in this category yet.</p>';
+    return;
+  }
+
+  container.innerHTML=filtered.map(p=>{
+    const name=p.name||p.title||"SEMEO Product";
+    const price=p.offerPrice||p.price||"";
+    const image=p.image||"";
+    const imagePath=image?image.replace(/^\/+/,""):"";
+    const categoryName=p.category||"Product";
+
+    return `
+      <a class="card" href="product.html?product=${encodeURIComponent(p.id)}">
+        <div class="photo">
+          ${imagePath
+            ? `<img src="${imagePath}" alt="${escapeHTML(name)}" onerror="this.style.display='none'">`
+            : "IMAGE COMING SOON"}
+        </div>
+        <div class="info">
+          <div class="category">${escapeHTML(categoryName)}</div>
+          <div class="name">${escapeHTML(name)}</div>
+          <div class="price">${price!==""?"₹"+escapeHTML(String(price)):"Price on request"}</div>
+        </div>
+      </a>`;
+  }).join("");
+}
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+
+document.getElementById("search").addEventListener("input",renderProducts);
+document.getElementById("category").addEventListener("change",renderProducts);
+document.getElementById("sort").addEventListener("change",renderProducts);
+
+loadProducts();
+</script>
+</body>
+</html>
